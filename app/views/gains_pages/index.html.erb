@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gains Pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gains_pages.each do |gains_page| %>
+      <tr>
+        <td><%= gains_page.title %></td>
+        <td><%= gains_page.body %></td>
+        
+        <td><%= link_to 'Remove Unworthy Gain', gains_page, method: :delete, data: { confirm: 'Are you sure this gain is unworthy?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add a GAIN', new_gains_page_path %>
